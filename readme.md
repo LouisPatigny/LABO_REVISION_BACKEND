@@ -1,3 +1,4 @@
+```
 CREATE TABLE "users" (
     "id" serial PRIMARY KEY,
     "email" varchar UNIQUE NOT NULL,
@@ -65,11 +66,11 @@ ALTER TABLE "orders" ADD FOREIGN KEY ("shipping_address_id") REFERENCES "shippin
 ALTER TABLE "order_items" ADD FOREIGN KEY ("order_id") REFERENCES "orders" ("id");
 
 ALTER TABLE "order_items" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id");
-
+```
 
 ------------------------------------------
 
-
+```
 -- 1) Insert the sole admin user
 INSERT INTO "users" ("email", "password")
 VALUES
@@ -120,3 +121,4 @@ VALUES
     (1, 2, 1, 19.99),
     (2, 3, 1, 29.99),
     (2, 5, 1, 14.99);
+```
