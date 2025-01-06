@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exo_revisions.API", "exo_revisions.API\exo_revisions.API.csproj", "{6861FDA7-E01B-4AFC-93F0-9332B74A43DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exo_revisions.BLL", "exo_revisions.BLL\exo_revisions.BLL.csproj", "{7B13E57C-9EF9-45AA-9A67-ADCF62110FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exo_revisions.DAL", "exo_revisions.DAL\exo_revisions.DAL.csproj", "{4FBEFAFE-A43C-4B20-AE92-2F65EEF27DE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6861FDA7-E01B-4AFC-93F0-9332B74A43DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6861FDA7-E01B-4AFC-93F0-9332B74A43DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6861FDA7-E01B-4AFC-93F0-9332B74A43DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6861FDA7-E01B-4AFC-93F0-9332B74A43DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B13E57C-9EF9-45AA-9A67-ADCF62110FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B13E57C-9EF9-45AA-9A67-ADCF62110FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B13E57C-9EF9-45AA-9A67-ADCF62110FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B13E57C-9EF9-45AA-9A67-ADCF62110FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBEFAFE-A43C-4B20-AE92-2F65EEF27DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBEFAFE-A43C-4B20-AE92-2F65EEF27DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBEFAFE-A43C-4B20-AE92-2F65EEF27DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBEFAFE-A43C-4B20-AE92-2F65EEF27DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
