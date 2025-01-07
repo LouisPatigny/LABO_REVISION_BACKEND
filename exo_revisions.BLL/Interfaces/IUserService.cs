@@ -1,8 +1,8 @@
-﻿using exo_revisions.DAL.Entities;
+﻿using exo_revisions.BLL.Models;
 
-namespace exo_revisions.DAL.Interfaces;
+namespace exo_revisions.BLL.Interfaces;
 
-public interface IUserRepository
+public interface IUserService
 {
     public IEnumerable<User> GetAll();
     public User? GetById(int id);
@@ -10,5 +10,5 @@ public interface IUserRepository
     public int Create(User user);
     public User? Login(string email);
     public int GetFidelityPoints(int id);
-    public void SetFidelityPoints(int id, int fidelityPoints);
+    public int UpdateFidelityPoints(int id, int points);
 }

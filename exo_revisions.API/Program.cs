@@ -18,12 +18,14 @@ builder.Services.AddTransient<NpgsqlConnection>(service =>
 //Injection des services BLL - User_Related
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 /*-----------------------------------------*/
 
 //Injection des services DAL - User_Related
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 /*-----------------------------------------*/
 

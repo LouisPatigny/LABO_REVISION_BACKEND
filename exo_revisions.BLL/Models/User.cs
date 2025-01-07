@@ -1,4 +1,4 @@
-﻿namespace exo_revisions.DAL.Entities;
+﻿namespace exo_revisions.BLL.Models;
 
 public class User
 {
