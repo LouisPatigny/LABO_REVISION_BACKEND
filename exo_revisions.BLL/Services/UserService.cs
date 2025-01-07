@@ -8,10 +8,17 @@ namespace exo_revisions.BLL.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IPasswordHelper _passwordHelper;
+    private readonly IJwtService _jwtService;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(
+        IUserRepository userRepository,
+            IPasswordHelper passwordHelper,
+                IJwtService jwtService)
     {
         _userRepository = userRepository;
+            _passwordHelper = passwordHelper;
+                _jwtService = jwtService;
     }
 
     public IEnumerable<User> GetAll()
@@ -31,12 +38,32 @@ public class UserService : IUserService
 
     public int Create(User user)
     {
+        user.Email = user.Email.ToLower();
+
+        string hash = _passwordHelper.GenerateHash(user.Email, user.Password);
+        user.Password = hash;
+        user.CreatedAt = DateTime.Now;
+
         return _userRepository.Create(user.ToEntity());
     }
 
-    public User? Login(string email)
+    public string Login(string email, string rawPassword)
     {
-        return _userRepository.Login(email)?.ToModel();
+        // 1) Récupérer l'user DB par email
+        var dbUser = _userRepository.GetByEmail(email.ToLower()) ?? throw new Exception("User not found");
+
+        // 2) Hasher le password fourni
+        string hashInput = _passwordHelper.GenerateHash(email.ToLower(), rawPassword);
+
+        // 3) Comparer avec la DB
+        if (dbUser.Password != hashInput)
+            throw new Exception("Invalid password");
+
+        // 4) Si OK, générer un token JWT
+        string token = _jwtService.GenerateJwtToken(dbUser.Id, dbUser.Email);
+
+        // Renvoyer le token JWT
+        return token;
     }
 
     public int GetFidelityPoints(int id)

@@ -8,7 +8,7 @@ public interface IUserService
     public User? GetById(int id);
     public User? GetByEmail(string email);
     public int Create(User user);
-    public User? Login(string email);
+    string Login(string email, string rawPassword);
     public int GetFidelityPoints(int id);
     public int UpdateFidelityPoints(int id, int points);
 }
