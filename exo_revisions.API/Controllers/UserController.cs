@@ -126,12 +126,14 @@ public class UserController : ControllerBase
     {
         try
         {
-            string? token = _userService.Login(user.Email, user.Password);
+            string token = _userService.Login(user.Email, user.Password);
             return Ok(new { token });
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError);
+            // Log ou afficher l'erreur
+            Console.WriteLine($"Erreur lors du login : {ex.Message}");
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }
 }
