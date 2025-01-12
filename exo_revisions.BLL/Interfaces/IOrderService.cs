@@ -1,8 +1,8 @@
-﻿using exo_revisions.DAL.Entities;
+﻿using exo_revisions.BLL.Models;
 
-namespace exo_revisions.DAL.Interfaces;
+namespace exo_revisions.BLL.Interfaces;
 
-public interface IOrderRepository
+public interface IOrderService
 {
     public IEnumerable<Order> GetAll();
     public Order? GetById(int id);

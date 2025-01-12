@@ -66,6 +66,25 @@ public class OrderRepository : IOrderRepository
         return _connection.QuerySingleOrDefault<Order>(query, new {Email = email});
     }
 
+    public IEnumerable<Order> GetAllByEmail(string email)
+    {
+        const string query = @"
+        SELECT
+            ""id"" AS ""Id"",
+            ""email"" AS ""Email"",
+            ""order_date"" AS ""OrderDate"",
+            ""status"" AS ""Status"",
+            ""total_amount"" AS ""TotalAmount"",
+            ""shipping_address_id"" AS ""ShippingAddressId""
+        FROM
+            ""orders""
+        WHERE
+            ""email"" = @Email;
+    ";
+
+        return _connection.Query<Order>(query, new { Email = email });
+    }
+
     public int Create(Order order)
     {
         const string query = @"
