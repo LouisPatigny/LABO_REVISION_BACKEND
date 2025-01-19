@@ -7,5 +7,6 @@ public class Order
     public DateTime OrderDate { get; set; }
     public required string Status { get; set; }
     public decimal TotalAmount { get; set; }
+    public decimal DiscountApplied { get; set; }
     public int? ShippingAddressId { get; set; }
 }

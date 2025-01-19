@@ -23,6 +23,7 @@ public class OrderRepository : IOrderRepository
                 ""order_date"" AS ""OrderDate"",
                 ""status"" AS ""Status"",
                 ""total_amount"" AS ""TotalAmount"",
+                ""discount_applied"" AS ""DiscountApplied"",
                 ""shipping_address_id"" AS ""ShippingAddressId""
             FROM
                 ""orders"";
@@ -39,6 +40,7 @@ public class OrderRepository : IOrderRepository
                 ""order_date"" AS ""OrderDate"",
                 ""status"" AS ""Status"",
                 ""total_amount"" AS ""TotalAmount"",
+                ""discount_applied"" AS ""DiscountApplied"",
                 ""shipping_address_id"" AS ""ShippingAddressId""
             FROM
                 ""orders""
@@ -57,6 +59,7 @@ public class OrderRepository : IOrderRepository
                 ""order_date"" AS ""OrderDate"",
                 ""status"" AS ""Status"",
                 ""total_amount"" AS ""TotalAmount"",
+                ""discount_applied"" AS ""DiscountApplied"",
                 ""shipping_address_id"" AS ""ShippingAddressId""
             FROM
                 ""orders""
@@ -75,6 +78,7 @@ public class OrderRepository : IOrderRepository
             ""order_date"" AS ""OrderDate"",
             ""status"" AS ""Status"",
             ""total_amount"" AS ""TotalAmount"",
+            ""discount_applied"" AS ""DiscountApplied"",
             ""shipping_address_id"" AS ""ShippingAddressId""
         FROM
             ""orders""
@@ -93,6 +97,7 @@ public class OrderRepository : IOrderRepository
                    ""order_date"",
                    ""status"",
                    ""total_amount"",
+                   ""discount_applied"",
                    ""shipping_address_id""
                    )
                 VALUES (
@@ -100,6 +105,7 @@ public class OrderRepository : IOrderRepository
                     @OrderDate,
                     @Status,
                     @TotalAmount,
+                    @DiscountApplied,
                     @ShippingAddressId
                     )
                 RETURNING ""id"" AS ""Id"";
@@ -110,6 +116,7 @@ public class OrderRepository : IOrderRepository
             OrderDate = order.OrderDate,
             Status = order.Status,
             TotalAmount = order.TotalAmount,
+            DiscountApplied = order.DiscountApplied,
             ShippingAddressId = order.ShippingAddressId
         });
 
@@ -124,6 +131,7 @@ public class OrderRepository : IOrderRepository
                 ""order_date"" = @OrderDate,
                 ""status"" = @Status,
                 ""total_amount"" = @TotalAmount,
+                ""discount_applied"" = @DiscountApplied,
                 ""shipping_address_id"" = @ShippingAddressId
             WHERE ""id"" = @Id;
             ";
@@ -134,6 +142,7 @@ public class OrderRepository : IOrderRepository
             OrderDate = order.OrderDate,
             Status = order.Status,
             TotalAmount = order.TotalAmount,
+            DiscountApplied = order.DiscountApplied,
             ShippingAddressId = order.ShippingAddressId
         });
         return affectedRows > 0;

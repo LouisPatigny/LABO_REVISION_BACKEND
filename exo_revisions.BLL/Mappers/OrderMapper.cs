@@ -14,6 +14,7 @@ public static class OrderMapper
             OrderDate = order.OrderDate,
             Status = order.Status,
             TotalAmount = order.TotalAmount,
+            DiscountApplied = order.DiscountApplied,
             ShippingAddressId = order.ShippingAddressId,
         };
     }
@@ -27,6 +28,7 @@ public static class OrderMapper
             OrderDate = order.OrderDate,
             Status = order.Status,
             TotalAmount = order.TotalAmount,
+            DiscountApplied = order.DiscountApplied,
             ShippingAddressId = order.ShippingAddressId,
         };
     }
